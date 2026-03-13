@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcp": "https://cloud.google.com/recommendations-ai#",
+    "CatalogItem": "gcp:CatalogItem",
+    "UserEvent": "gcp:UserEvent",
+    "Recommendation": "gcp:Recommendation",
+    "catalogId": "gcp:catalogId",
+    "categoryHierarchies": "gcp:categoryHierarchies",
+    "eventType": "gcp:eventType",
+    "visitorId": "gcp:visitorId",
+    "productMetadata": "gcp:productMetadata",
+    "priceRange": "gcp:priceRange",
+    "recommendationToken": "gcp:recommendationToken",
+    "placementId": "gcp:placementId",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url"
+  }
+}

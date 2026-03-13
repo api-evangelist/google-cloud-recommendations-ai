@@ -1,0 +1,307 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Recommendations AI API
+  description: >-
+    Delivers personalized product recommendations at scale using machine
+    learning for retail and e-commerce use cases.
+  version: v1beta1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/recommendations-ai
+servers:
+  - url: https://recommendationengine.googleapis.com/v1beta1
+paths:
+  /projects/{projectId}/locations/{location}/catalogs/{catalogId}/catalogItems:
+    get:
+      operationId: listCatalogItems
+      summary: List catalog items
+      description: Lists all catalog items in the specified catalog.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with catalog items.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  catalogItems:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CatalogItem'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createCatalogItem
+      summary: Create a catalog item
+      description: Creates a new catalog item in the specified catalog.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogItem'
+      responses:
+        '200':
+          description: Successful catalog item creation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogItem'
+  /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/userEvents:
+    post:
+      operationId: writeUserEvent
+      summary: Write a user event
+      description: Writes a single user event to the event store.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: eventStoreId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserEvent'
+      responses:
+        '200':
+          description: Successful user event creation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserEvent'
+  /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/placements/{placementId}:predict:
+    post:
+      operationId: predict
+      summary: Get recommendations
+      description: Makes a recommendation prediction for a user.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: eventStoreId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: placementId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PredictRequest'
+      responses:
+        '200':
+          description: Successful recommendation prediction response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredictResponse'
+components:
+  schemas:
+    CatalogItem:
+      type: object
+      required:
+        - id
+        - categoryHierarchies
+        - title
+      properties:
+        id:
+          type: string
+        categoryHierarchies:
+          type: array
+          items:
+            type: object
+            properties:
+              categories:
+                type: array
+                items:
+                  type: string
+        title:
+          type: string
+        description:
+          type: string
+        languageCode:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        itemAttributes:
+          type: object
+          properties:
+            categoricalFeatures:
+              type: object
+              additionalProperties:
+                type: object
+            numericalFeatures:
+              type: object
+              additionalProperties:
+                type: object
+        productMetadata:
+          type: object
+          properties:
+            priceRange:
+              type: object
+              properties:
+                min:
+                  type: number
+                max:
+                  type: number
+            availableQuantity:
+              type: integer
+            canonicalProductUri:
+              type: string
+    UserEvent:
+      type: object
+      required:
+        - eventType
+        - userInfo
+      properties:
+        eventType:
+          type: string
+          enum:
+            - EVENT_TYPE_UNSPECIFIED
+            - detail-page-view
+            - add-to-cart
+            - remove-from-cart
+            - purchase-complete
+            - category-page-view
+            - home-page-view
+            - search
+        userInfo:
+          type: object
+          properties:
+            visitorId:
+              type: string
+            userId:
+              type: string
+        eventDetail:
+          type: object
+          properties:
+            recommendationToken:
+              type: string
+            eventAttributes:
+              type: object
+        productEventDetail:
+          type: object
+          properties:
+            productDetails:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  quantity:
+                    type: integer
+        eventTime:
+          type: string
+    PredictRequest:
+      type: object
+      required:
+        - userEvent
+      properties:
+        userEvent:
+          $ref: '#/components/schemas/UserEvent'
+        pageSize:
+          type: integer
+        pageToken:
+          type: string
+        filter:
+          type: string
+        dryRun:
+          type: boolean
+        params:
+          type: object
+          additionalProperties:
+            type: object
+    PredictResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              metadata:
+                type: object
+        recommendationToken:
+          type: string
+        nextPageToken:
+          type: string

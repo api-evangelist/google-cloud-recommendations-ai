@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-recommendations-ai/refs/heads/main/json-schema/catalog-item.json",
+  "title": "Catalog Item",
+  "description": "Schema for a Google Cloud Recommendations AI catalog item resource.",
+  "type": "object",
+  "required": ["id", "categoryHierarchies", "title"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the catalog item."
+    },
+    "categoryHierarchies": {
+      "type": "array",
+      "description": "Category hierarchies for the catalog item.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ordered list of category names from root to leaf."
+          }
+        }
+      }
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the catalog item."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the catalog item."
+    },
+    "languageCode": {
+      "type": "string",
+      "description": "Language code of the catalog item content."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags associated with the catalog item."
+    },
+    "itemAttributes": {
+      "type": "object",
+      "description": "Custom attributes of the catalog item.",
+      "properties": {
+        "categoricalFeatures": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "numericalFeatures": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "productMetadata": {
+      "type": "object",
+      "description": "Product-specific metadata.",
+      "properties": {
+        "priceRange": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number",
+              "description": "Minimum product price."
+            },
+            "max": {
+              "type": "number",
+              "description": "Maximum product price."
+            }
+          }
+        },
+        "availableQuantity": {
+          "type": "integer",
+          "description": "Available quantity of the product."
+        },
+        "canonicalProductUri": {
+          "type": "string",
+          "description": "Canonical URI of the product page."
+        }
+      }
+    }
+  }
+}
