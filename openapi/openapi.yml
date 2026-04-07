@@ -14,7 +14,7 @@ paths:
   /projects/{projectId}/locations/{location}/catalogs/{catalogId}/catalogItems:
     get:
       operationId: listCatalogItems
-      summary: List catalog items
+      summary: Google Cloud Recommendations AI List catalog items
       description: Lists all catalog items in the specified catalog.
       parameters:
         - name: projectId
@@ -56,7 +56,7 @@ paths:
                     type: string
     post:
       operationId: createCatalogItem
-      summary: Create a catalog item
+      summary: Google Cloud Recommendations AI Create a catalog item
       description: Creates a new catalog item in the specified catalog.
       parameters:
         - name: projectId
@@ -90,7 +90,7 @@ paths:
   /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/userEvents:
     post:
       operationId: writeUserEvent
-      summary: Write a user event
+      summary: Google Cloud Recommendations AI Write a user event
       description: Writes a single user event to the event store.
       parameters:
         - name: projectId
@@ -126,10 +126,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserEvent'
-  /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/placements/{placementId}:predict:
-    post:
+  ? /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/placements/{placementId}:predict
+  : post:
       operationId: predict
-      summary: Get recommendations
+      summary: Google Cloud Recommendations AI Get recommendations
       description: Makes a recommendation prediction for a user.
       parameters:
         - name: projectId
