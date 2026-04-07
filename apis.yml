@@ -11,12 +11,12 @@ created: '2026-03-13'
 modified: '2026-03-13'
 specificationVersion: '0.18'
 tags:
-  - Recommendations
-  - Personalization
-  - Retail
   - E-Commerce
   - Google Cloud
   - Machine Learning
+  - Personalization
+  - Recommendations
+  - Retail
 apis:
   - name: Google Cloud Recommendations AI API
     description: >-
@@ -26,8 +26,8 @@ apis:
     humanURL: https://cloud.google.com/recommendations-ai
     baseURL: https://recommendationengine.googleapis.com
     tags:
-      - Recommendations
       - Personalization
+      - Recommendations
       - Retail
     properties:
       - type: OpenAPI

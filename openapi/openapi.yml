@@ -54,6 +54,8 @@ paths:
                       $ref: '#/components/schemas/CatalogItem'
                   nextPageToken:
                     type: string
+      tags:
+        - Projects
     post:
       operationId: createCatalogItem
       summary: Google Cloud Recommendations AI Create a catalog item
@@ -87,6 +89,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CatalogItem'
+      tags:
+        - Projects
   /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/userEvents:
     post:
       operationId: writeUserEvent
@@ -126,6 +130,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserEvent'
+      tags:
+        - Projects
   ? /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/placements/{placementId}:predict
   : post:
       operationId: predict
@@ -170,6 +176,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PredictResponse'
+      tags:
+        - Projects
 components:
   schemas:
     CatalogItem:
@@ -305,3 +313,5 @@ components:
           type: string
         nextPageToken:
           type: string
+tags:
+  - name: Projects
