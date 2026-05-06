@@ -1,0 +1,333 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Recommendations AI API
+  description: Delivers personalized product recommendations at scale using machine learning for retail and e-commerce use
+    cases.
+  tags:
+  - Google
+  - Cloud
+  - Recommendations
+  - Ai
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-recommendations-ai
+    baseUri: https://recommendationengine.googleapis.com/v1beta1
+    description: Google Cloud Recommendations AI API HTTP API.
+    resources:
+    - name: projects-projectid-locations-location-catalogs-c
+      path: /projects/{projectId}/locations/{location}/catalogs/{catalogId}/catalogItems
+      operations:
+      - name: listcatalogitems
+        method: GET
+        description: Google Cloud Recommendations AI List catalog items
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: catalogId
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcatalogitem
+        method: POST
+        description: Google Cloud Recommendations AI Create a catalog item
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: catalogId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-catalogs-c
+      path: /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/userEvents
+      operations:
+      - name: writeuserevent
+        method: POST
+        description: Google Cloud Recommendations AI Write a user event
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: catalogId
+          in: path
+          type: string
+          required: true
+        - name: eventStoreId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-catalogs-c
+      path: /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/placements/{placementId}:predict
+      operations:
+      - name: predict
+        method: POST
+        description: Google Cloud Recommendations AI Get recommendations
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: catalogId
+          in: path
+          type: string
+          required: true
+        - name: eventStoreId
+          in: path
+          type: string
+          required: true
+        - name: placementId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-recommendations-ai-rest
+    description: REST adapter for Google Cloud Recommendations AI API.
+    resources:
+    - path: /projects/{projectId}/locations/{location}/catalogs/{catalogId}/catalogItems
+      name: listcatalogitems
+      operations:
+      - method: GET
+        name: listcatalogitems
+        description: Google Cloud Recommendations AI List catalog items
+        call: google-cloud-recommendations-ai.listcatalogitems
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          catalogId: rest.catalogId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/catalogs/{catalogId}/catalogItems
+      name: createcatalogitem
+      operations:
+      - method: POST
+        name: createcatalogitem
+        description: Google Cloud Recommendations AI Create a catalog item
+        call: google-cloud-recommendations-ai.createcatalogitem
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          catalogId: rest.catalogId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/userEvents
+      name: writeuserevent
+      operations:
+      - method: POST
+        name: writeuserevent
+        description: Google Cloud Recommendations AI Write a user event
+        call: google-cloud-recommendations-ai.writeuserevent
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          catalogId: rest.catalogId
+          eventStoreId: rest.eventStoreId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/placements/{placementId}:predict
+      name: predict
+      operations:
+      - method: POST
+        name: predict
+        description: Google Cloud Recommendations AI Get recommendations
+        call: google-cloud-recommendations-ai.predict
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          catalogId: rest.catalogId
+          eventStoreId: rest.eventStoreId
+          placementId: rest.placementId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-recommendations-ai-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Recommendations AI API for AI agent use.
+    tools:
+    - name: listcatalogitems
+      description: Google Cloud Recommendations AI List catalog items
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-recommendations-ai.listcatalogitems
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        catalogId: tools.catalogId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: catalogId
+        type: string
+        description: catalogId
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcatalogitem
+      description: Google Cloud Recommendations AI Create a catalog item
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-recommendations-ai.createcatalogitem
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        catalogId: tools.catalogId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: catalogId
+        type: string
+        description: catalogId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: writeuserevent
+      description: Google Cloud Recommendations AI Write a user event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-recommendations-ai.writeuserevent
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        catalogId: tools.catalogId
+        eventStoreId: tools.eventStoreId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: catalogId
+        type: string
+        description: catalogId
+        required: true
+      - name: eventStoreId
+        type: string
+        description: eventStoreId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: predict
+      description: Google Cloud Recommendations AI Get recommendations
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-recommendations-ai.predict
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        catalogId: tools.catalogId
+        eventStoreId: tools.eventStoreId
+        placementId: tools.placementId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: catalogId
+        type: string
+        description: catalogId
+        required: true
+      - name: eventStoreId
+        type: string
+        description: eventStoreId
+        required: true
+      - name: placementId
+        type: string
+        description: placementId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
