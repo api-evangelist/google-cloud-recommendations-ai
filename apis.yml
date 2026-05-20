@@ -8,42 +8,44 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.18'
 tags:
-- E-Commerce
-- Google Cloud
-- Machine Learning
-- Personalization
-- Recommendations
-- Retail
-apis:
-- name: Google Cloud Recommendations AI API
-  description: Delivers personalized product recommendations at scale using machine learning, supporting catalog management,
-    user event ingestion, and real-time prediction serving for retail and e-commerce.
-  humanURL: https://cloud.google.com/recommendations-ai
-  baseURL: https://recommendationengine.googleapis.com
-  tags:
+  - E-Commerce
+  - Google Cloud
+  - Machine Learning
   - Personalization
   - Recommendations
   - Retail
-  properties:
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: JSONSchema
-    url: json-schema/catalog-item.json
+apis:
+  - name: Google Cloud Recommendations AI API
+    description: Delivers personalized product recommendations at scale using machine learning, supporting catalog management,
+      user event ingestion, and real-time prediction serving for retail and e-commerce.
+    humanURL: https://cloud.google.com/recommendations-ai
+    baseURL: https://recommendationengine.googleapis.com
+    tags:
+    - Personalization
+    - Recommendations
+    - Retail
+    properties:
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: JSONSchema
+      url: json-schema/catalog-item.json
+    - type: JSONLD
+      url: json-ld/context.jsonld
+    - type: NaftikoCapability
+      url: capabilities/openapi-projects.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/googleapis
+  - type: GettingStarted
+    url: https://cloud.google.com/recommendations-ai/docs/overview
+  - type: Pricing
+    url: https://cloud.google.com/recommendations-ai/pricing
   - type: JSONLD
     url: json-ld/context.jsonld
-  - type: NaftikoCapability
-    url: capabilities/openapi-projects.yaml
-common:
-- type: GettingStarted
-  url: https://cloud.google.com/recommendations-ai/docs/overview
-- type: Pricing
-  url: https://cloud.google.com/recommendations-ai/pricing
-- type: JSONLD
-  url: json-ld/context.jsonld
-- type: Integrations
-  url: https://cloud.google.com/marketplace
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
 integrations:
-- name: Become a Partner
+  - name: Become a Partner
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
