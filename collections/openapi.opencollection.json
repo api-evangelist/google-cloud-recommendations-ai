@@ -1,0 +1,167 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Recommendations AI API",
+    "version": "v1beta1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Recommendations AI List catalog items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://recommendationengine.googleapis.com/v1beta1/projects/:projectId/locations/:location/catalogs/:catalogId/catalogItems",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "catalogId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists all catalog items in the specified catalog."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Recommendations AI Create a catalog item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recommendationengine.googleapis.com/v1beta1/projects/:projectId/locations/:location/catalogs/:catalogId/catalogItems",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "catalogId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new catalog item in the specified catalog."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Recommendations AI Write a user event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recommendationengine.googleapis.com/v1beta1/projects/:projectId/locations/:location/catalogs/:catalogId/eventStores/:eventStoreId/userEvents",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "catalogId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventStoreId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Writes a single user event to the event store."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Recommendations AI Get recommendations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://recommendationengine.googleapis.com/v1beta1/projects/:projectId/locations/:location/catalogs/:catalogId/eventStores/:eventStoreId/placements/:placementId:predict",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "catalogId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventStoreId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "placementId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Makes a recommendation prediction for a user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
