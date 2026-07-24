@@ -1,15 +1,15 @@
 openapi: 3.1.0
 info:
-  title: Google Cloud Recommendations AI API
-  description: >-
-    Delivers personalized product recommendations at scale using machine
-    learning for retail and e-commerce use cases.
+  title: Google Cloud Recommendations AI Projects API
+  description: Delivers personalized product recommendations at scale using machine learning for retail and e-commerce use cases.
   version: v1beta1
   contact:
     name: Google Cloud
     url: https://cloud.google.com/recommendations-ai
 servers:
-  - url: https://recommendationengine.googleapis.com/v1beta1
+- url: https://recommendationengine.googleapis.com/v1beta1
+tags:
+- name: Projects
 paths:
   /projects/{projectId}/locations/{location}/catalogs/{catalogId}/catalogItems:
     get:
@@ -17,29 +17,29 @@ paths:
       summary: Google Cloud Recommendations AI List catalog items
       description: Lists all catalog items in the specified catalog.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: catalogId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: pageSize
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with catalog items.
@@ -55,27 +55,27 @@ paths:
                   nextPageToken:
                     type: string
       tags:
-        - Projects
+      - Projects
     post:
       operationId: createCatalogItem
       summary: Google Cloud Recommendations AI Create a catalog item
       description: Creates a new catalog item in the specified catalog.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: catalogId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -90,33 +90,33 @@ paths:
               schema:
                 $ref: '#/components/schemas/CatalogItem'
       tags:
-        - Projects
+      - Projects
   /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/userEvents:
     post:
       operationId: writeUserEvent
       summary: Google Cloud Recommendations AI Write a user event
       description: Writes a single user event to the event store.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: catalogId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: eventStoreId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: eventStoreId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -131,38 +131,38 @@ paths:
               schema:
                 $ref: '#/components/schemas/UserEvent'
       tags:
-        - Projects
+      - Projects
   ? /projects/{projectId}/locations/{location}/catalogs/{catalogId}/eventStores/{eventStoreId}/placements/{placementId}:predict
   : post:
       operationId: predict
       summary: Google Cloud Recommendations AI Get recommendations
       description: Makes a recommendation prediction for a user.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: catalogId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: eventStoreId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: placementId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: eventStoreId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: placementId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -177,15 +177,79 @@ paths:
               schema:
                 $ref: '#/components/schemas/PredictResponse'
       tags:
-        - Projects
+      - Projects
 components:
   schemas:
+    PredictRequest:
+      type: object
+      required:
+      - userEvent
+      properties:
+        userEvent:
+          $ref: '#/components/schemas/UserEvent'
+        pageSize:
+          type: integer
+        pageToken:
+          type: string
+        filter:
+          type: string
+        dryRun:
+          type: boolean
+        params:
+          type: object
+          additionalProperties:
+            type: object
+    UserEvent:
+      type: object
+      required:
+      - eventType
+      - userInfo
+      properties:
+        eventType:
+          type: string
+          enum:
+          - EVENT_TYPE_UNSPECIFIED
+          - detail-page-view
+          - add-to-cart
+          - remove-from-cart
+          - purchase-complete
+          - category-page-view
+          - home-page-view
+          - search
+        userInfo:
+          type: object
+          properties:
+            visitorId:
+              type: string
+            userId:
+              type: string
+        eventDetail:
+          type: object
+          properties:
+            recommendationToken:
+              type: string
+            eventAttributes:
+              type: object
+        productEventDetail:
+          type: object
+          properties:
+            productDetails:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  quantity:
+                    type: integer
+        eventTime:
+          type: string
     CatalogItem:
       type: object
       required:
-        - id
-        - categoryHierarchies
-        - title
+      - id
+      - categoryHierarchies
+      - title
       properties:
         id:
           type: string
@@ -233,70 +297,6 @@ components:
               type: integer
             canonicalProductUri:
               type: string
-    UserEvent:
-      type: object
-      required:
-        - eventType
-        - userInfo
-      properties:
-        eventType:
-          type: string
-          enum:
-            - EVENT_TYPE_UNSPECIFIED
-            - detail-page-view
-            - add-to-cart
-            - remove-from-cart
-            - purchase-complete
-            - category-page-view
-            - home-page-view
-            - search
-        userInfo:
-          type: object
-          properties:
-            visitorId:
-              type: string
-            userId:
-              type: string
-        eventDetail:
-          type: object
-          properties:
-            recommendationToken:
-              type: string
-            eventAttributes:
-              type: object
-        productEventDetail:
-          type: object
-          properties:
-            productDetails:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  quantity:
-                    type: integer
-        eventTime:
-          type: string
-    PredictRequest:
-      type: object
-      required:
-        - userEvent
-      properties:
-        userEvent:
-          $ref: '#/components/schemas/UserEvent'
-        pageSize:
-          type: integer
-        pageToken:
-          type: string
-        filter:
-          type: string
-        dryRun:
-          type: boolean
-        params:
-          type: object
-          additionalProperties:
-            type: object
     PredictResponse:
       type: object
       properties:
@@ -313,5 +313,3 @@ components:
           type: string
         nextPageToken:
           type: string
-tags:
-  - name: Projects
