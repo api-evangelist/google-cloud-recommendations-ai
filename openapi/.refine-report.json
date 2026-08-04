@@ -1,0 +1,14 @@
+{
+  "provider": "google-cloud-recommendations-ai",
+  "sources": [
+    "google-cloud-recommendations-ai-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-recommendations-ai-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
