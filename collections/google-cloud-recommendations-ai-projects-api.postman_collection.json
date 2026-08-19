@@ -1,0 +1,667 @@
+{
+  "item": [
+    {
+      "id": "617762c5-b8ed-484c-a50b-8f7233bf803a",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "85fef234-8a67-455c-8969-aff60da69a31",
+          "name": "Google Cloud Recommendations AI List catalog items",
+          "request": {
+            "name": "Google Cloud Recommendations AI List catalog items",
+            "description": {
+              "content": "Lists all catalog items in the specified catalog.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "catalogs",
+                ":catalogId",
+                "catalogItems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "catalogId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90961382-f455-4cc9-be2f-364ef0b7295f",
+              "name": "Successful response with catalog items.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "catalogs",
+                    ":catalogId",
+                    "catalogItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "catalogId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"catalogItems\": [\n    {\n      \"id\": \"string\",\n      \"categoryHierarchies\": [\n        {\n          \"categories\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"categories\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"languageCode\": \"string\",\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"itemAttributes\": {\n        \"categoricalFeatures\": {\n          \"key_0\": {}\n        },\n        \"numericalFeatures\": {\n          \"key_0\": {},\n          \"key_1\": {},\n          \"key_2\": {}\n        }\n      },\n      \"productMetadata\": {\n        \"priceRange\": {\n          \"min\": 4690.23797814585,\n          \"max\": 9028.703472727726\n        },\n        \"availableQuantity\": 9937,\n        \"canonicalProductUri\": \"string\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"categoryHierarchies\": [\n        {\n          \"categories\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"categories\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"languageCode\": \"string\",\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"itemAttributes\": {\n        \"categoricalFeatures\": {\n          \"key_0\": {}\n        },\n        \"numericalFeatures\": {\n          \"key_0\": {},\n          \"key_1\": {},\n          \"key_2\": {}\n        }\n      },\n      \"productMetadata\": {\n        \"priceRange\": {\n          \"min\": 8468.571625219553,\n          \"max\": 7374.688699511454\n        },\n        \"availableQuantity\": 3062,\n        \"canonicalProductUri\": \"string\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ae0ccf3-724d-4399-bda1-8b9d5774ff4a",
+          "name": "Google Cloud Recommendations AI Create a catalog item",
+          "request": {
+            "name": "Google Cloud Recommendations AI Create a catalog item",
+            "description": {
+              "content": "Creates a new catalog item in the specified catalog.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "catalogs",
+                ":catalogId",
+                "catalogItems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "catalogId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"categoryHierarchies\": [\n    {\n      \"categories\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"categories\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"languageCode\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"itemAttributes\": {\n    \"categoricalFeatures\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\",\n      \"key_2\": \"<object>\"\n    },\n    \"numericalFeatures\": {\n      \"key_0\": \"<object>\"\n    }\n  },\n  \"productMetadata\": {\n    \"priceRange\": {\n      \"min\": \"<number>\",\n      \"max\": \"<number>\"\n    },\n    \"availableQuantity\": \"<integer>\",\n    \"canonicalProductUri\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a5a470f6-54d6-42ff-b68a-629fa925e898",
+              "name": "Successful catalog item creation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "catalogs",
+                    ":catalogId",
+                    "catalogItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "catalogId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"categoryHierarchies\": [\n    {\n      \"categories\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"categories\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"languageCode\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"itemAttributes\": {\n    \"categoricalFeatures\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    },\n    \"numericalFeatures\": {\n      \"key_0\": \"<object>\",\n      \"key_1\": \"<object>\"\n    }\n  },\n  \"productMetadata\": {\n    \"priceRange\": {\n      \"min\": \"<number>\",\n      \"max\": \"<number>\"\n    },\n    \"availableQuantity\": \"<integer>\",\n    \"canonicalProductUri\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"categoryHierarchies\": [\n    {\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"languageCode\": \"string\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"itemAttributes\": {\n    \"categoricalFeatures\": {\n      \"key_0\": {}\n    },\n    \"numericalFeatures\": {\n      \"key_0\": {}\n    }\n  },\n  \"productMetadata\": {\n    \"priceRange\": {\n      \"min\": 234.76370547312774,\n      \"max\": 5689.368274009767\n    },\n    \"availableQuantity\": 590,\n    \"canonicalProductUri\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7526659c-a0a8-45e3-b70e-fa6179d90333",
+          "name": "Google Cloud Recommendations AI Write a user event",
+          "request": {
+            "name": "Google Cloud Recommendations AI Write a user event",
+            "description": {
+              "content": "Writes a single user event to the event store.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "catalogs",
+                ":catalogId",
+                "eventStores",
+                ":eventStoreId",
+                "userEvents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "catalogId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventStoreId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventType\": \"<string>\",\n  \"userInfo\": {\n    \"visitorId\": \"<string>\",\n    \"userId\": \"<string>\"\n  },\n  \"eventDetail\": {\n    \"recommendationToken\": \"<string>\",\n    \"eventAttributes\": \"<object>\"\n  },\n  \"productEventDetail\": {\n    \"productDetails\": [\n      {\n        \"id\": \"<string>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"quantity\": \"<integer>\"\n      }\n    ]\n  },\n  \"eventTime\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7506d5b9-6108-4109-a1bd-acbea2f779b6",
+              "name": "Successful user event creation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "catalogs",
+                    ":catalogId",
+                    "eventStores",
+                    ":eventStoreId",
+                    "userEvents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "catalogId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventStoreId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventType\": \"<string>\",\n  \"userInfo\": {\n    \"visitorId\": \"<string>\",\n    \"userId\": \"<string>\"\n  },\n  \"eventDetail\": {\n    \"recommendationToken\": \"<string>\",\n    \"eventAttributes\": \"<object>\"\n  },\n  \"productEventDetail\": {\n    \"productDetails\": [\n      {\n        \"id\": \"<string>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"quantity\": \"<integer>\"\n      }\n    ]\n  },\n  \"eventTime\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"eventType\": \"remove-from-cart\",\n  \"userInfo\": {\n    \"visitorId\": \"string\",\n    \"userId\": \"string\"\n  },\n  \"eventDetail\": {\n    \"recommendationToken\": \"string\",\n    \"eventAttributes\": {}\n  },\n  \"productEventDetail\": {\n    \"productDetails\": [\n      {\n        \"id\": \"string\",\n        \"quantity\": 2256\n      },\n      {\n        \"id\": \"string\",\n        \"quantity\": 1330\n      }\n    ]\n  },\n  \"eventTime\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79e5ac64-95a2-4f8c-a5d6-9dde7120277c",
+          "name": "Google Cloud Recommendations AI Get recommendations",
+          "request": {
+            "name": "Google Cloud Recommendations AI Get recommendations",
+            "description": {
+              "content": "Makes a recommendation prediction for a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "catalogs",
+                ":catalogId",
+                "eventStores",
+                ":eventStoreId",
+                "placements",
+                "{{placementId}}:predict"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "catalogId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventStoreId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userEvent\": {\n    \"eventType\": \"<string>\",\n    \"userInfo\": {\n      \"visitorId\": \"<string>\",\n      \"userId\": \"<string>\"\n    },\n    \"eventDetail\": {\n      \"recommendationToken\": \"<string>\",\n      \"eventAttributes\": \"<object>\"\n    },\n    \"productEventDetail\": {\n      \"productDetails\": [\n        {\n          \"id\": \"<string>\",\n          \"quantity\": \"<integer>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"quantity\": \"<integer>\"\n        }\n      ]\n    },\n    \"eventTime\": \"<string>\"\n  },\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\",\n  \"filter\": \"<string>\",\n  \"dryRun\": \"<boolean>\",\n  \"params\": {\n    \"key_0\": \"<object>\",\n    \"key_1\": \"<object>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec5d866a-8689-4cdb-9d28-cbafb130819e",
+              "name": "Successful recommendation prediction response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "catalogs",
+                    ":catalogId",
+                    "eventStores",
+                    ":eventStoreId",
+                    "placements",
+                    "{{placementId}}:predict"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "catalogId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventStoreId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userEvent\": {\n    \"eventType\": \"detail-page-view\",\n    \"userInfo\": {\n      \"visitorId\": \"string\",\n      \"userId\": \"string\"\n    },\n    \"eventDetail\": {\n      \"recommendationToken\": \"string\",\n      \"eventAttributes\": {}\n    },\n    \"productEventDetail\": {\n      \"productDetails\": [\n        {\n          \"id\": \"string\",\n          \"quantity\": 6377\n        },\n        {\n          \"id\": \"string\",\n          \"quantity\": 7052\n        }\n      ]\n    },\n    \"eventTime\": \"string\"\n  },\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\",\n  \"filter\": \"<string>\",\n  \"dryRun\": \"<boolean>\",\n  \"params\": {\n    \"key_0\": \"<object>\",\n    \"key_1\": \"<object>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"metadata\": {}\n    },\n    {\n      \"id\": \"string\",\n      \"metadata\": {}\n    }\n  ],\n  \"recommendationToken\": \"string\",\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://recommendationengine.googleapis.com/v1beta1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "placementId"
+    }
+  ],
+  "info": {
+    "_postman_id": "da08d0a1-e647-4494-b1f5-c473efd2f844",
+    "name": "Google Cloud Recommendations AI Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Delivers personalized product recommendations at scale using machine learning for retail and e-commerce use cases.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
