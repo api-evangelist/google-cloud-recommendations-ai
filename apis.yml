@@ -23,6 +23,13 @@ specificationVersion: '0.23'
 tags:
   - E-Commerce
   - Google Cloud
+  - Machine-Learning
+  - Personalization
+  - Recommendations
+  - Retail
+tags_raw:
+  - E-Commerce
+  - Google Cloud
   - Machine Learning
   - Personalization
   - Recommendations
@@ -34,6 +41,8 @@ apis:
   humanURL: https://cloud.google.com/recommendations-ai
   baseURL: https://recommendationengine.googleapis.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
