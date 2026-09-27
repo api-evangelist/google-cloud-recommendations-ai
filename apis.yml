@@ -35,7 +35,7 @@ specificationVersion: '0.23'
 tags:
   - E-Commerce
   - Google Cloud
-  - Machine-Learning
+  - Machine Learning
   - Personalization
   - Recommendations
   - Retail
@@ -46,6 +46,7 @@ tags_raw:
   - Personalization
   - Recommendations
   - Retail
+  - Machine-Learning
 apis:
 - aid: google-cloud-recommendations-ai:google-cloud-recommendations-ai-projects-api
   name: Google Cloud Recommendations AI Projects API
