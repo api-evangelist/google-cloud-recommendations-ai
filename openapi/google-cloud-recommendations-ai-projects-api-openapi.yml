@@ -180,22 +180,6 @@ paths:
       - Projects
 components:
   schemas:
-    PredictResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-              metadata:
-                type: object
-        recommendationToken:
-          type: string
-        nextPageToken:
-          type: string
     PredictRequest:
       type: object
       required:
@@ -215,6 +199,51 @@ components:
           type: object
           additionalProperties:
             type: object
+    UserEvent:
+      type: object
+      required:
+      - eventType
+      - userInfo
+      properties:
+        eventType:
+          type: string
+          enum:
+          - EVENT_TYPE_UNSPECIFIED
+          - detail-page-view
+          - add-to-cart
+          - remove-from-cart
+          - purchase-complete
+          - category-page-view
+          - home-page-view
+          - search
+        userInfo:
+          type: object
+          properties:
+            visitorId:
+              type: string
+            userId:
+              type: string
+        eventDetail:
+          type: object
+          properties:
+            recommendationToken:
+              type: string
+            eventAttributes:
+              type: object
+        productEventDetail:
+          type: object
+          properties:
+            productDetails:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  quantity:
+                    type: integer
+        eventTime:
+          type: string
     CatalogItem:
       type: object
       required:
@@ -268,48 +297,19 @@ components:
               type: integer
             canonicalProductUri:
               type: string
-    UserEvent:
+    PredictResponse:
       type: object
-      required:
-      - eventType
-      - userInfo
       properties:
-        eventType:
-          type: string
-          enum:
-          - EVENT_TYPE_UNSPECIFIED
-          - detail-page-view
-          - add-to-cart
-          - remove-from-cart
-          - purchase-complete
-          - category-page-view
-          - home-page-view
-          - search
-        userInfo:
-          type: object
-          properties:
-            visitorId:
-              type: string
-            userId:
-              type: string
-        eventDetail:
-          type: object
-          properties:
-            recommendationToken:
-              type: string
-            eventAttributes:
-              type: object
-        productEventDetail:
-          type: object
-          properties:
-            productDetails:
-              type: array
-              items:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              metadata:
                 type: object
-                properties:
-                  id:
-                    type: string
-                  quantity:
-                    type: integer
-        eventTime:
+        recommendationToken:
+          type: string
+        nextPageToken:
           type: string
