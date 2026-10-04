@@ -180,25 +180,6 @@ paths:
       - Projects
 components:
   schemas:
-    PredictRequest:
-      type: object
-      required:
-      - userEvent
-      properties:
-        userEvent:
-          $ref: '#/components/schemas/UserEvent'
-        pageSize:
-          type: integer
-        pageToken:
-          type: string
-        filter:
-          type: string
-        dryRun:
-          type: boolean
-        params:
-          type: object
-          additionalProperties:
-            type: object
     UserEvent:
       type: object
       required:
@@ -244,6 +225,25 @@ components:
                     type: integer
         eventTime:
           type: string
+    PredictRequest:
+      type: object
+      required:
+      - userEvent
+      properties:
+        userEvent:
+          $ref: '#/components/schemas/UserEvent'
+        pageSize:
+          type: integer
+        pageToken:
+          type: string
+        filter:
+          type: string
+        dryRun:
+          type: boolean
+        params:
+          type: object
+          additionalProperties:
+            type: object
     CatalogItem:
       type: object
       required:
