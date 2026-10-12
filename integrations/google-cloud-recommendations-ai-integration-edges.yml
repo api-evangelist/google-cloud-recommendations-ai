@@ -1,0 +1,20 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/google-cloud-recommendations-ai/integrations
+- https://zapier.com/apps/google-cloud-recommendations/integrations
+- https://n8n.io/integrations/google-cloud-recommendations-ai/
+- https://n8n.io/integrations/google-cloud-recommendations/
+- https://composio.dev/toolkits/google-cloud-recommendations-ai
+- https://monid.ai/tools/google-cloud-recommendations-ai
+checked:
+- https://composio.dev/toolkits/google-cloud-recommendations-ai
+- https://monid.ai/tools/google-cloud-recommendations-ai
+- https://n8n.io/integrations/google-cloud-recommendations-ai/
+- https://n8n.io/integrations/google-cloud-recommendations/
+- https://zapier.com/apps/google-cloud-recommendations-ai/integrations
+- https://zapier.com/apps/google-cloud-recommendations/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
