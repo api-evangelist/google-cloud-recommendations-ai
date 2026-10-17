@@ -180,6 +180,22 @@ paths:
       - Projects
 components:
   schemas:
+    PredictResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              metadata:
+                type: object
+        recommendationToken:
+          type: string
+        nextPageToken:
+          type: string
     UserEvent:
       type: object
       required:
@@ -297,19 +313,3 @@ components:
               type: integer
             canonicalProductUri:
               type: string
-    PredictResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-              metadata:
-                type: object
-        recommendationToken:
-          type: string
-        nextPageToken:
-          type: string
