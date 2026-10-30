@@ -1,4 +1,4 @@
-# Google Cloud Recommendations AI (google-cloud-recommendations-ai)
+# Google Cloud Recommendations AI
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,54 +66,134 @@
 
 Google Cloud Recommendations AI delivers personalized product recommendations at scale. It uses machine learning to understand customer behavior and product catalog data to generate highly relevant recommendations for retail and e-commerce use cases including product discovery, related items, and frequently bought together.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-recommendations-ai/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-recommendations-ai/refs/heads/main/apis.yml)
+**Areas:** E-Commerce · Google Cloud · Machine Learning · Personalization · Recommendations · Retail
 
-## Tags
+## Google Cloud Recommendations AI on APIs.io
 
-- E-Commerce
-- Google Cloud
-- Machine Learning
-- Personalization
-- Recommendations
-- Retail
+Everything profiled for Google Cloud Recommendations AI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-recommendations-ai/](https://apis.io/providers/google-cloud-recommendations-ai/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (1)
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+- [Google Cloud Recommendations AI Projects API](https://apis.io/apis/google-cloud-recommendations-ai/google-cloud-recommendations-ai-projects-api/) — The Projects API from Google Cloud Recommendations AI — 3 operation(s) for projects.
 
-## APIs
+### Published properties
 
-### Google Cloud Recommendations AI API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Delivers personalized product recommendations at scale using machine learning, supporting catalog management, user event ingestion, and real-time prediction serving for retail and e-commerce.
+#### Agentic access (1)
 
-- **Human URL:** [https://cloud.google.com/recommendations-ai](https://cloud.google.com/recommendations-ai)
-- **Base URL:** `https://recommendationengine.googleapis.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Google Cloud Recommendations Ai Agentic Access](https://apis.io/agentic-access/google-cloud-recommendations-ai/google-cloud-recommendations-ai-agentic-access/)
 
-- Personalization
-- Recommendations
-- Retail
+#### JSON Schema (1)
 
-#### Properties
+The data models the API reads and writes.
 
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/catalog-item.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Catalog Item](https://apis.io/schemas/google-cloud-recommendations-ai/catalog-item/)
 
-## Common Properties
+#### JSON-LD (1)
 
-- [GitHub Organization](https://github.com/googleapis)
-- [Getting Started](https://cloud.google.com/recommendations-ai/docs/overview)
+Linked-data contexts for the provider's vocabulary.
+
+- [context Context](https://apis.io/jsonld/google-cloud-recommendations-ai/context/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Recommendations AI Projects API](https://apis.io/collections/google-cloud-recommendations-ai/open-google-cloud-recommendations-ai-projects-api/)
+- [Google Cloud Recommendations AI API](https://apis.io/collections/google-cloud-recommendations-ai/open-openapi/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Recommendations AI — jsonschema rules](https://apis.io/rules/google-cloud-recommendations-ai/google-cloud-recommendations-ai-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Recommendations Ai Domain Security](https://apis.io/security/google-cloud-recommendations-ai/google-cloud-recommendations-ai-domain-security/)
+- [Google Cloud Recommendations Ai Vulnerability Disclosure](https://apis.io/security/google-cloud-recommendations-ai/google-cloud-recommendations-ai-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Recommendations Ai Plans Pricing](https://apis.io/plans/google-cloud-recommendations-ai/google-cloud-recommendations-ai-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Recommendations Ai Rate Limits](https://apis.io/rate-limits/google-cloud-recommendations-ai/google-cloud-recommendations-ai-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Recommendations Ai Finops](https://apis.io/finops/google-cloud-recommendations-ai/google-cloud-recommendations-ai-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
+- [Getting started](https://cloud.google.com/recommendations-ai/docs/overview)
 - [Pricing](https://cloud.google.com/recommendations-ai/pricing)
-- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [GitHub](https://github.com/googleapis)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 53.8 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 18.4 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-recommendations-ai/](https://apis.io/providers/google-cloud-recommendations-ai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Recommendations AI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-recommendations-ai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
